@@ -12,7 +12,6 @@ enum ValidationErrorType: String {
     case EmptyError = "Input can not be empty"
     case UserNameError = "User name should be email"
     case PasswordMinError = "Password should more than 6 characters"
-    case PasswordMaxError = "Password should less than 10 characters"
     case NoError = "Success"
 }
 

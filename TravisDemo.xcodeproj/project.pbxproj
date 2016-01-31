@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5006C8F01C5DA8D500D83EC0 /* PValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D3261C1C56FB9900D39ADD /* PValidationService.swift */; };
 		5607739321365D42B27AECBE /* Pods_TravisDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FF1DA6906AF0D933CEE2526 /* Pods_TravisDemoTests.framework */; };
 		C95779AD775B64DFBB8F7440 /* Pods_TravisDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DC395C0D85BE143FF0F7FF3 /* Pods_TravisDemoUITests.framework */; };
 		D02874D81C57A03D00AAACB4 /* RegexHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02874D71C57A03D00AAACB4 /* RegexHelper.swift */; };
@@ -415,6 +416,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0D3260D1C56F7FF00D39ADD /* TravisDemoUITests.swift in Sources */,
+				5006C8F01C5DA8D500D83EC0 /* PValidationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

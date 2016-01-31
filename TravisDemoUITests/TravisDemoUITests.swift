@@ -32,7 +32,7 @@ class TravisDemoUITests: XCTestCase {
         app.buttons["Login"].tap()
         
         XCTAssertEqual(app.alerts.element.label, "Result")
-        XCTAssert(app.alerts.element.staticTexts["Success"].exists)
+        XCTAssert(app.alerts.element.staticTexts[ValidationErrorType.NoError.rawValue].exists)
     }
     
     func testUserNameEmpty() {
@@ -47,7 +47,7 @@ class TravisDemoUITests: XCTestCase {
         app.buttons["Login"].tap()
         
         XCTAssertEqual(app.alerts.element.label, "Result")
-        XCTAssert(app.alerts.element.staticTexts["Input can not be empty"].exists)
+        XCTAssert(app.alerts.element.staticTexts[ValidationErrorType.EmptyError.rawValue].exists)
     }
     
     func testPasswordMinError() {
@@ -58,10 +58,10 @@ class TravisDemoUITests: XCTestCase {
         
         let secureTextField = app.otherElements.containingType(.StaticText, identifier:"User Name").childrenMatchingType(.SecureTextField).element
         secureTextField.tap()
-        secureTextField.typeText("1234567891011")
+        secureTextField.typeText("123")
         app.buttons["Login"].tap()
         
         XCTAssertEqual(app.alerts.element.label, "Result")
-        XCTAssert(app.alerts.element.staticTexts["Password should less than 10 characters"].exists)
+        XCTAssert(app.alerts.element.staticTexts[ValidationErrorType.PasswordMinError.rawValue].exists)
     }
 }
