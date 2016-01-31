@@ -50,6 +50,11 @@ class SimpleValidationSpec: QuickSpec {
                 expect(result).to(equal(ValidationErrorType.PasswordMinError))
             }
             
+            it("should return password max error") {
+                let result = validationService.passwordValidate("jfkdlsjaklfjdklsajfd")
+                expect(result).to(equal(ValidationErrorType.PasswordMaxError))
+            }
+            
             it("should return no error") {
                 let result = validationService.passwordValidate("12345678")
                 expect(result).to(equal(ValidationErrorType.NoError))

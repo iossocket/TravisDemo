@@ -33,6 +33,8 @@ class SimpleValidationService: PValidationService {
             return .EmptyError
         } else if passwordCount <= 6 {
             return .PasswordMinError
+        } else if passwordCount >= 10 {
+            return .PasswordMaxError
         } else {
             return .NoError
         }

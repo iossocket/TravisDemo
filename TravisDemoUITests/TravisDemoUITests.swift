@@ -64,4 +64,19 @@ class TravisDemoUITests: XCTestCase {
         XCTAssertEqual(app.alerts.element.label, "Result")
         XCTAssert(app.alerts.element.staticTexts[ValidationErrorType.PasswordMinError.rawValue].exists)
     }
+    
+    func testPasswordMaxError() {
+        let app = XCUIApplication()
+        let emailAddressTextField = app.textFields["email address"]
+        emailAddressTextField.tap()
+        emailAddressTextField.typeText("aa@126.com")
+        
+        let secureTextField = app.otherElements.containingType(.StaticText, identifier:"User Name").childrenMatchingType(.SecureTextField).element
+        secureTextField.tap()
+        secureTextField.typeText("123fdsafdsafdsafdsafdsf")
+        app.buttons["Login"].tap()
+        
+        XCTAssertEqual(app.alerts.element.label, "Result")
+        XCTAssert(app.alerts.element.staticTexts[ValidationErrorType.PasswordMaxError.rawValue].exists)
+    }
 }
