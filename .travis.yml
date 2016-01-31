@@ -1,0 +1,13 @@
+language: objective-c
+osx_image: xcode7.2
+
+cache: cocoapods
+
+before_install:
+- gem install xcpretty
+
+script:
+- xcodebuild -workspace TravisDemo.xcworkspace -list
+- xcodebuild -workspace TravisDemo.xcworkspace -scheme TravisDemo clean build -sdk iphonesimulator -destination 'name=iPhone 6s Plus' | xcpretty
+- xcodebuild -workspace TravisDemo.xcworkspace -scheme TravisDemoTests test -sdk iphonesimulator -destination 'name=iPhone 6' | xcpretty
+- xcodebuild -workspace TravisDemo.xcworkspace -scheme TravisDemoUITests test -sdk iphonesimulator -destination 'name=iPhone 6' | xcpretty
